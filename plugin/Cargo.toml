@@ -8,3 +8,4 @@ crate-type = ["cdylib"]
 
 [dependencies]
 tokio = { version = "1.8", features = ["full"] }
+async-ffi = "0.2"

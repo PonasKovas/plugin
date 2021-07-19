@@ -3,6 +3,12 @@
 version = 3
 
 [[package]]
+name = "async-ffi"
+version = "0.2.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8cc87f0cacc7242348817a9a789bed905bd3850ba04bb6a7a0464ac2a9687604"
+
+[[package]]
 name = "autocfg"
 version = "1.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -12,6 +18,7 @@ checksum = "cdb031dd78e28731d87d56cc8ffef4a8f36ca26c38fe2de700543e627f8a464a"
 name = "bin"
 version = "0.1.0"
 dependencies = [
+ "async-ffi",
  "libloading",
  "tokio",
 ]
