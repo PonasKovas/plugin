@@ -1,12 +1,11 @@
 use async_ffi::{FfiFuture, FutureExt};
-use tokio::runtime::Handle;
+use async_io::Timer;
 
 #[no_mangle]
-extern "C" fn something(runtime: Handle) -> FfiFuture<()> {
+extern "C" fn something() -> FfiFuture<()> {
     async move {
-        let _guard = runtime.enter();
         println!("hello");
-        tokio::time::sleep(std::time::Duration::from_secs(5)).await;
+        Timer::after(std::time::Duration::from_secs(3)).await;
         println!("yeah from plugin");
     }
     .into_ffi()
